@@ -455,15 +455,15 @@ class WebGLState {
 	 * `gl.blendFunc()`, `gl.blendFuncSeparate()` and `gl.blendColor()` are only called when necessary.
 	 *
 	 * @param {number} blending - The blending type.
-	 * @param {number} blendEquation - The blending equation.
-	 * @param {number} blendSrc - Only relevant for custom blending. The RGB source blending factor.
-	 * @param {number} blendDst - Only relevant for custom blending. The RGB destination blending factor.
-	 * @param {number} blendEquationAlpha - Only relevant for custom blending. The blending equation for alpha.
-	 * @param {number} blendSrcAlpha - Only relevant for custom blending. The alpha source blending factor.
-	 * @param {number} blendDstAlpha - Only relevant for custom blending. The alpha destination blending factor.
-	 * @param {Color} blendColor - Only relevant for custom blending. The RGB values of the constant blend color.
-	 * @param {number} blendAlpha - Only relevant for custom blending. The alpha value of the constant blend color.
-	 * @param {boolean} premultipliedAlpha - Whether premultiplied alpha is enabled or not.
+	 * @param {number} [blendEquation] - The blending equation.
+	 * @param {number} [blendSrc] - Only relevant for custom blending. The RGB source blending factor.
+	 * @param {number} [blendDst] - Only relevant for custom blending. The RGB destination blending factor.
+	 * @param {number} [blendEquationAlpha] - Only relevant for custom blending. The blending equation for alpha.
+	 * @param {number} [blendSrcAlpha] - Only relevant for custom blending. The alpha source blending factor.
+	 * @param {number} [blendDstAlpha] - Only relevant for custom blending. The alpha destination blending factor.
+	 * @param {Color} [blendColor] - Only relevant for custom blending. The RGB values of the constant blend color.
+	 * @param {number} [blendAlpha] - Only relevant for custom blending. The alpha value of the constant blend color.
+	 * @param {boolean} [premultipliedAlpha] - Whether premultiplied alpha is enabled or not.
 	 */
 	setBlending( blending, blendEquation, blendSrc, blendDst, blendEquationAlpha, blendSrcAlpha, blendDstAlpha, blendColor, blendAlpha, premultipliedAlpha ) {
 
@@ -866,7 +866,7 @@ class WebGLState {
 	 * This method caches the state so `gl.stencilMask()` is only
 	 * called when necessary.
 	 *
-	 * @param {boolean} stencilMask - The stencil mask.
+	 * @param {number} stencilMask - The stencil mask.
 	 */
 	setStencilMask( stencilMask ) {
 
@@ -936,10 +936,10 @@ class WebGLState {
 	 * Configures the WebGL state for the given material.
 	 *
 	 * @param {Material} material - The material to configure the state for.
-	 * @param {number} frontFaceCW - Whether the front faces are counter-clockwise or not.
-	 * @param {number} hardwareClippingPlanes - The number of hardware clipping planes.
+	 * @param {boolean} frontFaceCW - Whether the front faces are counter-clockwise or not.
+	 * @param {number} [hardwareClippingPlanes=0] - The number of hardware clipping planes.
 	 */
-	setMaterial( material, frontFaceCW, hardwareClippingPlanes ) {
+	setMaterial( material, frontFaceCW, hardwareClippingPlanes = 0 ) {
 
 		const { gl } = this;
 
@@ -1126,7 +1126,7 @@ class WebGLState {
 	 * called when necessary.
 	 *
 	 * @param {number} target - The binding point (target).
-	 * @param {WebGLFramebuffer} framebuffer - The WebGL framebuffer to bind.
+	 * @param {?WebGLFramebuffer} framebuffer - The WebGL framebuffer to bind.
 	 * @return {boolean} Whether a bind has been executed or not.
 	 */
 	bindFramebuffer( target, framebuffer ) {

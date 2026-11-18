@@ -336,12 +336,13 @@ class UniformsGroup extends UniformBuffer {
 		const v = uniform.getValue();
 		const offset = uniform.offset;
 		const type = uniform.getType();
+		const nv = typeof v === 'boolean' ? ( v ? 1 : 0 ) : v;
 
-		if ( a[ offset ] !== v ) {
+		if ( a[ offset ] !== nv ) {
 
 			const b = this._getBufferForType( type );
 
-			b[ offset ] = a[ offset ] = v;
+			b[ offset ] = a[ offset ] = nv;
 			updated = true;
 
 			this.addUniformUpdateRange( uniform );
@@ -583,8 +584,8 @@ class UniformsGroup extends UniformBuffer {
  * Sets the values of the second array to the first array.
  *
  * @private
- * @param {TypedArray} a - The first array.
- * @param {TypedArray} b - The second array.
+ * @param {TypedArray|Array<number>} a - The first array.
+ * @param {TypedArray|Array<number>} b - The second array.
  * @param {number} offset - An index offset for the first array.
  */
 function setArray( a, b, offset ) {
@@ -601,8 +602,8 @@ function setArray( a, b, offset ) {
  * Returns `true` if the given arrays are equal.
  *
  * @private
- * @param {TypedArray} a - The first array.
- * @param {TypedArray} b - The second array.
+ * @param {TypedArray|Array<number>} a - The first array.
+ * @param {TypedArray|Array<number>} b - The second array.
  * @param {number} offset - An index offset for the first array.
  * @return {boolean} Whether the given arrays are equal or not.
  */
