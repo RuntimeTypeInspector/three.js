@@ -557,7 +557,7 @@ class UniformsGroup extends UniformBuffer {
 	 *
 	 * @private
 	 * @param {string} type - The data type.
-	 * @return {TypedArray} The typed array.
+	 * @return {ArrayBufferView} The typed array.
 	 */
 	_getBufferForType( type ) {
 
@@ -583,8 +583,8 @@ class UniformsGroup extends UniformBuffer {
  * Sets the values of the second array to the first array.
  *
  * @private
- * @param {TypedArray} a - The first array.
- * @param {TypedArray} b - The second array.
+ * @param {ArrayBufferView|number[]} a - The first array.
+ * @param {ArrayBufferView|number[]} b - The second array.
  * @param {number} offset - An index offset for the first array.
  */
 function setArray( a, b, offset ) {
@@ -601,8 +601,8 @@ function setArray( a, b, offset ) {
  * Returns `true` if the given arrays are equal.
  *
  * @private
- * @param {TypedArray} a - The first array.
- * @param {TypedArray} b - The second array.
+ * @param {ArrayBufferView|number[]} a - The first array.
+ * @param {ArrayBufferView|number[]} b - The second array.
  * @param {number} offset - An index offset for the first array.
  * @return {boolean} Whether the given arrays are equal or not.
  */
