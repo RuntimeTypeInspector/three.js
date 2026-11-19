@@ -45,7 +45,7 @@ class RenderLists {
 	/**
 	 * Returns a render list for the given scene and camera.
 	 *
-	 * @param {Object3D} scene - The scene.
+	 * @param {Object3D} scene - The scene or 3D object.
 	 * @param {Camera} camera - The camera.
 	 * @param {Lighting} lighting - The lighting manager.
 	 * @return {RenderList} The render list.

@@ -90,9 +90,9 @@ class NodeManager extends DataMap {
 	}
 
 	/**
-	 * Returns `true` if the given node uniforms group must be updated or not.
+	 * Returns `true` if the given binding's node uniforms group must be updated or not.
 	 *
-	 * @param {Object} nodeUniformsGroup - The node uniforms group or binding.
+	 * @param {Binding} nodeUniformsGroup - The binding to check for updates.
 	 * @return {boolean} Whether the node uniforms group requires an update or not.
 	 */
 	updateGroup( nodeUniformsGroup ) {

@@ -75,9 +75,9 @@ class Lighting {
 	}
 
 	/**
-	 * Returns a lights node for the given scene.
+	 * Returns a lights node for the given scene or 3D object.
 	 *
-	 * @param {Object3D} scene - The scene.
+	 * @param {Object3D} scene - The scene or 3D object.
 	 * @return {LightsNode} The lights node.
 	 */
 	getNode( scene ) {
@@ -123,7 +123,7 @@ class Lighting {
 	 * Nested render calls might mutate the lights array so a save/restore is required
 	 * for each render call.
 	 *
-	 * @param {Object3D} scene - The scene.
+	 * @param {Object3D} scene - The scene or 3D object.
 	 */
 	beginRender( scene ) {
 
@@ -134,7 +134,7 @@ class Lighting {
 	/**
 	 * Restores the lights saved by the matching {@link Lighting#beginRender} call.
 	 *
-	 * @param {Object3D} scene - The scene.
+	 * @param {Object3D} scene - The scene or 3D object.
 	 */
 	finishRender( scene ) {
 
