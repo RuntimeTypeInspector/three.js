@@ -937,9 +937,9 @@ class WebGLState {
 	 *
 	 * @param {Material} material - The material to configure the state for.
 	 * @param {boolean} frontFaceCW - Whether the front faces are counter-clockwise or not.
-	 * @param {number} [hardwareClippingPlanes=0] - The number of hardware clipping planes.
+	 * @param {number} [hardwareClippingPlanes] - The number of hardware clipping planes.
 	 */
-	setMaterial( material, frontFaceCW, hardwareClippingPlanes = 0 ) {
+	setMaterial( material, frontFaceCW, hardwareClippingPlanes ) {
 
 		const { gl } = this;
 
