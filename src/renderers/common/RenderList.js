@@ -97,7 +97,7 @@ class RenderList {
 	 * Constructs a render list.
 	 *
 	 * @param {Lighting} lighting - The lighting management component.
-	 * @param {Object3D} scene - The scene or 3D object.
+	 * @param {Object3D} scene - The scene or 3D object (usually a scene).
 	 * @param {Camera} camera - The camera the scene is rendered with.
 	 */
 	constructor( lighting, scene, camera ) {
